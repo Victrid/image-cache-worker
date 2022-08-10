@@ -1,0 +1,11 @@
+name = "pic-cache"
+main = "src/index.ts"
+compatibility_date = "2022-08-09"
+
+route = "<YOUR ROUTE>"
+
+[vars]
+FALLBACK_FIGURE = "<YOUR FALLBACK FIGURE URL>"
+
+# Secrets
+# APITOKEN = "<YOUR APITOKEN>"
