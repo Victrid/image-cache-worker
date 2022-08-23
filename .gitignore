@@ -169,7 +169,3 @@ dist
 # wrangler project
 
 .dev.vars
-
-# No package lock
-
-package-lock.json
