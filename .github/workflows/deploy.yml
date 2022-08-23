@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Configure wrangler.toml
-        uses: danielr1996/envsubst-action@1.0.0
+        uses: danielr1996/envsubst-action@1.1.0
         env:
             ROUTE: ${{ secrets.ICW_ROUTE }}
             FALLBACK_FIGURE: ${{ secrets.ICW_FALLBACK_FIGURE }}
