@@ -21,24 +21,18 @@ export default {
   },
 
   get_headers (host: string): HeadersInit {
+    const chromeHeader = new Headers({
+      'sec-ch-ua': '"Chromium";v="104", " Not A;Brand";v="99", "Google Chrome";v="104"',
+      Referer: 'https://daily.zhihu.com',
+      'sec-ch-ua-mobile': '?0',
+      accept: 'image/webp,image/svg+xml;q=0.9,image/png;q=0.5,image/jpeg;q=0.5,image/gif;q=0.3,image/bmp;q=0.1',
+      'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36',
+      'sec-ch-ua-platform': '"Linux"'
+    })
     const HEADER_MAP = new Map<string, HeadersInit>(
       [
-        ['www.zhihu.com', new Headers({
-          'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"',
-          Referer: 'https://daily.zhihu.com',
-          'sec-ch-ua-mobile': '?0',
-          accept: 'image/webp,image/svg+xml;q=0.9,image/png;q=0.5,image/jpeg;q=0.5,image/gif;q=0.3,image/bmp;q=0.1',
-          'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
-          'sec-ch-ua-platform': '"Linux"'
-        })],
-        ['cn.nikkei.com', new Headers({
-          'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"',
-          Referer: 'https://cn.nikkei.com/',
-          'sec-ch-ua-mobile': '?0',
-          accept: 'image/webp,image/svg+xml;q=0.9,image/png;q=0.5,image/jpeg;q=0.5,image/gif;q=0.3,image/bmp;q=0.1',
-          'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
-          'sec-ch-ua-platform': '"Linux"'
-        })]
+        ['www.zhihu.com', chromeHeader],
+        ['cn.nikkei.com', chromeHeader]
       ])
 
     const result = HEADER_MAP.get(host)
