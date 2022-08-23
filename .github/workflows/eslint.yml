@@ -1,0 +1,22 @@
+name: Lint all codes
+
+on:
+  push:
+    branches:
+      - master
+    pull_request:
+        types: [opened, reopened]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: 'npm'
+    - name: Install NPM packages
+      run: npm install
+    - name: Lint
+      run: npm run lint

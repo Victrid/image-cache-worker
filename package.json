@@ -15,6 +15,7 @@
   "private": true,
   "scripts": {
     "start": "wrangler dev",
+    "lint": "eslint .",
     "deploy": "wrangler publish"
   }
 }

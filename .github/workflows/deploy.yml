@@ -1,0 +1,27 @@
+name: Deploy to Cloudflare
+
+on:
+  push:
+    tags: [ 'v*' ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: Configure wrangler.toml
+          uses: danielr1996/envsubst-action@1.0.0
+          env:
+              ROUTE: ${{ secrets.ICW_ROUTE }}
+              FALLBACK_FIGURE: ${{ secrets.ICW_FALLBACK_FIGURE }}
+          with:
+            input: wrangler.toml
+            output: wrangler.toml
+        - name: Publish
+          uses: cloudflare/wrangler-action@2.0.0
+          with:
+            apiToken: ${{ secrets.CF_API_TOKEN }}
+            secrets: | 
+              APITOKEN
+          env:
+            APITOKEN: ${{ secrets.ICW_APITOKEN }}
