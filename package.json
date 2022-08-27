@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "devDependencies": {
     "@cloudflare/workers-types": "^3.14.1",
-    "@typescript-eslint/eslint-plugin": "^5.34.0",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
     "eslint": "^8.22.0",
     "eslint-config-standard-with-typescript": "^22.0.0",
     "eslint-plugin-import": "^2.26.0",
