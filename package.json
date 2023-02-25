@@ -2,7 +2,7 @@
   "name": "pic-cache",
   "version": "0.0.1",
   "devDependencies": {
-    "@cloudflare/workers-types": "^3.14.1",
+    "@cloudflare/workers-types": "^4.20230221.0",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "eslint": "^8.22.0",
     "eslint-config-standard-with-typescript": "^22.0.0",
